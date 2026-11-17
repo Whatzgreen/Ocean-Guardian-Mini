@@ -254,6 +254,34 @@ button{font:inherit;color:inherit}
 .cardlist{gap:7px}
 .how .vis{height:54px}
 #step2 h2{font-size:23px}
+.stories{display:flex;flex-direction:column;gap:8px}
+.stories h3,.review h3{margin:0;font-family:var(--font-display);font-weight:600;font-size:18px}
+.st-lead,.an-lead{font-size:14.5px!important;margin:0}
+.story{display:grid;grid-template-columns:56px 1fr;gap:10px;background:#eef7fb;border-radius:14px;padding:10px}
+.story img{width:56px;height:56px;object-fit:contain}
+.story b{display:block;font-family:var(--font-display);font-weight:600;font-size:16px;line-height:1.25}
+.story small{display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:3px}
+.story span{display:block;font-size:14.5px;line-height:1.5}
+.story em{display:block;font-style:normal;font-size:13px;margin-top:4px;color:var(--danger);font-weight:600}
+.st-src{font-size:12px!important}
+.st-end{font-family:var(--font-display);font-size:16px!important;color:var(--ink)!important;text-align:center}
+.review.answer{gap:8px}
+.an{border:1.5px solid #d5e3e9;border-radius:14px;padding:9px 10px;display:flex;flex-direction:column;gap:3px}
+.an.wrong{border-color:var(--danger);background:#fff5f4}
+.an-top{display:flex;align-items:center;gap:8px}
+.an-top svg{width:30px;height:30px;flex:none}
+.an-top b{font-family:var(--font-display);font-weight:600;font-size:16px;line-height:1.2}
+.an small{font-size:13px;color:var(--ink-2)}
+.an span:not(.chip){font-size:14.5px;line-height:1.5}
+.guide-h{margin-top:6px!important}
+.guide{display:flex;flex-direction:column;gap:6px}
+.guide div{display:grid;grid-template-columns:78px 1fr;gap:8px;align-items:start;font-size:14px;line-height:1.45}
+.guide .chip{margin-left:0;text-align:center}
+.pnote{background:#fff6e0;border:1.5px solid #f0d58a;border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:5px;font-size:14.5px;line-height:1.5}
+.pnote b{font-family:var(--font-display);font-weight:600;font-size:16px}
+.pnote i{font-style:normal;font-weight:600;border-radius:999px;padding:0 8px;margin-right:4px;font-size:13px;white-space:nowrap}
+.pnote i.ok{background:var(--b1);color:#1b2733}
+.pnote i.no{background:var(--b3);color:#fff}
 @media (max-height:640px){.sea .an{height:34px}.sea .an img{max-height:34px}.bin .bd{min-height:50px;padding:4px 2px}.bin svg{width:16px;height:16px}}
 @media (prefers-reduced-motion:reduce){.slot.full,.bin.good .bd,.bin.bad,.pop,.sea .an.pulse img,.it.net.hit .d{animation:none}.toast,.banner div{transition:none}}
 </style>
@@ -298,6 +326,13 @@ button{font:inherit;color:inherit}
     <symbol id="i-paint" viewBox="0 0 48 48"><g stroke="#1b2733" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M10 14c0-8 28-8 28 0" fill="none"/><rect x="10" y="14" width="28" height="28" rx="3" fill="#c7ced4"/><path d="M10 14h28v8c-3 0-3 6-6 6s-3-4-6-4-3 8-6 8-3-6-6-6-4-2-4-4z" fill="#2b67c6"/></g></symbol>
     <symbol id="i-cling" viewBox="0 0 48 48"><g stroke="#1b2733" stroke-width="2.6" stroke-linejoin="round"><rect x="6" y="12" width="36" height="14" rx="7" fill="#e3f2f8"/><ellipse cx="38" cy="19" rx="4" ry="7" fill="#fff"/><path d="M10 26l-2 16h22l4-16" fill="#eef8fc" opacity=".9"/></g></symbol>
     <symbol id="i-buoy" viewBox="0 0 48 48"><g stroke="#1b2733" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><rect x="8" y="16" width="32" height="22" rx="6" fill="#fff"/><path d="M14 22h4M26 30h6M20 33h2" fill="none" stroke="#c9d3da"/><path d="M24 16c0-6 8-6 10-10" fill="none" stroke="#a8743f"/></g></symbol>
+    <symbol id="i-banana" viewBox="0 0 48 48"><g stroke="#1b2733" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M24 8c-2 8-10 16-18 20 4 6 14 4 18-6 4 10 14 12 18 6-8-4-16-12-18-20z" fill="#ffd84d"/><path d="M24 8V4" fill="none"/><path d="M24 22v14" fill="none" stroke="#c9a227"/></g></symbol>
+    <symbol id="i-news" viewBox="0 0 48 48"><g stroke="#1b2733" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 10h30v28a4 4 0 0 0 8 0V18h-8" fill="#f4f1e8"/><path d="M6 10v28a4 4 0 0 0 4 4h30" fill="#f4f1e8"/><rect x="11" y="15" width="10" height="8" fill="#9aa4ad"/><path d="M25 16h6M25 22h6M11 28h20M11 34h20" fill="none"/></g></symbol>
+    <symbol id="i-straw" viewBox="0 0 48 48"><g stroke="#1b2733" stroke-linejoin="round" stroke-linecap="round" fill="none"><path d="M14 42L28 12l10-4" stroke-width="8"/><path d="M14 42L28 12l10-4" stroke="#ff8fb3" stroke-width="4"/><path d="M19 31l4 2M23 23l4 2" stroke="#fff" stroke-width="2.5"/></g></symbol>
+    <symbol id="i-tincan" viewBox="0 0 48 48"><g stroke="#1b2733" stroke-width="2.6" stroke-linejoin="round"><path d="M8 16v16c0 4 7 7 16 7s16-3 16-7V16" fill="#c7ced4"/><path d="M8 22c0 4 7 7 16 7s16-3 16-7v6c0 4-7 7-16 7S8 32 8 28z" fill="#e9584f"/><ellipse cx="24" cy="16" rx="16" ry="7" fill="#e3e8ec"/><path d="M26 14l8-6" fill="none" stroke-linecap="round"/></g></symbol>
+    <symbol id="i-pills" viewBox="0 0 48 48"><g stroke="#1b2733" stroke-width="2.6" stroke-linejoin="round"><rect x="6" y="10" width="36" height="28" rx="4" fill="#dfe6ea"/><circle cx="16" cy="19" r="4" fill="#fff"/><circle cx="32" cy="19" r="4" fill="#fff"/><circle cx="16" cy="30" r="4" fill="#ff8a8a"/><circle cx="32" cy="30" r="4" fill="#fff"/></g></symbol>
+    <symbol id="i-brush" viewBox="0 0 48 48"><g stroke="#1b2733" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M8 40L32 16" stroke-width="9"/><path d="M8 40L32 16" stroke="#6fc3e8" stroke-width="5"/><path d="M27 9l12 12-5 5-12-12z" fill="#fff"/><path d="M30 12l-3 3M34 16l-3 3M38 20l-3 3" fill="none" stroke-width="2"/></g></symbol>
+    <symbol id="i-jug" viewBox="0 0 48 48"><g stroke="#1b2733" stroke-width="2.6" stroke-linejoin="round"><rect x="17" y="3" width="10" height="6" rx="1.5" fill="#2b67c6"/><path d="M16 9h12l8 8v23a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V17z" fill="#f4f6f7"/><path d="M30 20h4v10h-4z" fill="#cfe6f6"/><path d="M10 28h16v9H10z" fill="#6fc3e8"/></g></symbol>
     <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16z" fill="#5fb847" stroke="#1b2733" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 20l9-9" stroke="#1b2733" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-token" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#cfe6f6" stroke="#1b2733" stroke-width="1.8"/><path d="M8.5 9l1-3h1.6l.4 3M15.5 9l-1-3h-1.6l-.4 3M7.5 9h9l-.8 9h-7.4z" fill="#fff" stroke="#1b2733" stroke-width="1.3" stroke-linejoin="round"/></symbol>
     <symbol id="c-clean" viewBox="0 0 48 48"><g stroke="#1b2733" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M30 4l-8 22" fill="none"/><path d="M14 24h16l4 18H10z" fill="#ffcf5c"/><path d="M16 30l-2 12M22 30v12M28 30l2 12" fill="none"/><path d="M38 10l2 4 4 1-4 2-1 4-2-4-4-1 4-2z" fill="#fff"/></g></symbol>
@@ -418,6 +453,7 @@ button{font:inherit;color:inherit}
         </div>
         <div class="ani-row" id="endAnimals"></div>
         <div class="fact" id="endFact"></div>
+        <div class="stories" id="endStories"></div>
         <div class="review" id="review"></div>
         <div class="share"><input id="shareText" readonly aria-label="ข้อความแชร์ผล"><button id="copyBtn">คัดลอก</button></div>
         <div class="btnrow"><button class="cta" id="againBtn">เล่นอีกครั้ง</button><button class="cta ghost" id="changeBtn">เปลี่ยนระดับ</button></div>
@@ -468,8 +504,16 @@ Object.assign(T, {
 T.bag.why="เปื้อนอาหาร รีไซเคิลไม่ได้";
 T.spray.why="มีแรงดันและสารเคมี";
 T.cup.why="เปื้อน รีไซเคิลยาก";
-var TR_MED=["carton","papercup","tissue","leafwrap","bagclean"];
-var TR_HARD=["pizza","grounds","sachet","lighter","phone","paint","cling","buoy"];
+Object.assign(T, {
+  banana:{n:"เปลือกกล้วย",i:"banana",b:0},
+  news:{n:"หนังสือพิมพ์เก่า",i:"news",b:1},
+  straw:{n:"หลอดพลาสติก",i:"straw",b:3,tr:1,why:"เล็กและเบา รีไซเคิลยาก"},
+  tincan:{n:"กระป๋องปลากระป๋อง",i:"tincan",b:1,tr:1,why:"ล้างแล้วรีไซเคิลได้"},
+  pills:{n:"ยาหมดอายุ",i:"pills",b:2,tr:2,why:"ตัวยาปนเปื้อนดินและน้ำได้"},
+  brush:{n:"แปรงสีฟันเก่า",i:"brush",b:3,tr:2,why:"พลาสติกผสมขนแปรง รีไซเคิลยาก"}
+});
+var TR_MED=["carton","papercup","tissue","leafwrap","bagclean","straw","tincan"];
+var TR_HARD=["pizza","grounds","sachet","lighter","phone","paint","cling","buoy","pills","brush"];
 var LEVELS = {
   easy:{n:"เริ่มต้น", who:"ผู้นำชุมชน", img:"r_leader", c:"var(--b0)", on:"#fff",
         ln:"ขยะที่เจอทุกวัน เหมาะกับเด็ก",
@@ -511,10 +555,111 @@ var FACT = {
   drum:"น้ำมันรั่วเพียงถังเดียวกระจายเป็นวงกว้างบนผิวน้ำได้",
   net:"อวนผีคืออวนที่ถูกทิ้งในทะเล มันยังพันสัตว์ทะเลต่อไปได้อีกหลายปี"
 };
+// fuller "how to throw it away, and why" used on the lose screen
+var HOW = {
+  banana:"เปลือกกล้วยย่อยสลายได้ ทิ้งถังขยะเปียก นำไปทำปุ๋ยหมักได้",
+  news:"กระดาษที่แห้งและสะอาดรีไซเคิลได้ มัดรวมกันแล้วทิ้งถังรีไซเคิลหรือขายได้",
+  straw:"หลอดพลาสติกชิ้นเล็กและเบา โรงงานคัดแยกไม่คุ้ม จึงทิ้งถังทั่วไป ทางที่ดีคือไม่รับหลอด",
+  tincan:"กระป๋องโลหะรีไซเคิลได้ ล้างคราบอาหารออกก่อน แล้วทิ้งถังรีไซเคิล",
+  pills:"ยาหมดอายุมีตัวยาที่ปนเปื้อนดินและแหล่งน้ำได้ ต้องทิ้งถังขยะอันตราย ห้ามเทลงท่อ",
+  brush:"แปรงสีฟันทำจากพลาสติกหลายชนิดติดกับขนแปรง แยกรีไซเคิลยาก จึงทิ้งถังทั่วไป",
+  carton:"กล่องนมยูเอชทีรีไซเคิลได้ เทให้หมด ล้าง แล้วพับให้แบนก่อนทิ้งถังรีไซเคิล",
+  papercup:"แก้วกาแฟกระดาษเคลือบพลาสติกไว้ด้านใน แยกกระดาษออกยาก จึงทิ้งถังทั่วไป",
+  tissue:"ทิชชูใช้แล้วสกปรกและเส้นใยสั้นเกินไป รีไซเคิลไม่ได้ ทิ้งถังทั่วไป",
+  leafwrap:"ใบตองเป็นใบไม้ ย่อยสลายได้เอง ทิ้งถังขยะเปียกพร้อมเศษอาหาร",
+  bagclean:"ถุงพลาสติกที่สะอาดและแห้งรีไซเคิลได้ ถ้าเปื้อนอาหารแล้วต้องทิ้งถังทั่วไป",
+  pizza:"กล่องกระดาษที่เปื้อนน้ำมันรีไซเคิลไม่ได้ เพราะน้ำมันทำให้เยื่อกระดาษเสีย ทิ้งถังทั่วไป",
+  grounds:"กากกาแฟเป็นขยะอินทรีย์ ทิ้งถังขยะเปียก ใช้ทำปุ๋ยหมักหรือโรยต้นไม้ได้",
+  sachet:"ซองกาแฟสำเร็จรูปเป็นพลาสติกหลายชั้นปนฟอยล์ แยกชั้นไม่ได้ จึงทิ้งถังทั่วไป",
+  lighter:"ไฟแช็กมีแก๊สติดไฟค้างอยู่ อาจระเบิดหรือติดไฟได้ ต้องทิ้งถังขยะอันตราย",
+  phone:"มือถือเก่าเป็นขยะอิเล็กทรอนิกส์ มีแบตเตอรี่และโลหะหนัก ทิ้งถังอันตรายหรือจุดรับคืน",
+  paint:"กระป๋องสีมีสารเคมีค้างอยู่ ต่างจากกระป๋องเครื่องดื่ม จึงต้องทิ้งถังขยะอันตราย",
+  cling:"ฟิล์มห่ออาหารบางและมักเปื้อนอาหาร รีไซเคิลยาก ทิ้งถังทั่วไป",
+  buoy:"ทุ่นโฟมเก่าแตกเป็นเม็ดเล็กง่ายและรีไซเคิลยาก ทิ้งถังทั่วไป อย่าปล่อยให้ลอยในทะเล"
+};
+Object.assign(HOW, {
+  shrimp:"เปลือกกุ้งเป็นเศษอาหาร ทิ้งถังขยะเปียก นำไปทำปุ๋ยหมักได้ อย่าทิ้งรวมกับพลาสติก",
+  fish:"ก้างและเศษปลาเป็นเศษอาหาร ทิ้งถังขยะเปียก นำไปทำปุ๋ยหรืออาหารสัตว์ได้",
+  melon:"เปลือกผลไม้ย่อยสลายได้ ทิ้งถังขยะเปียก ถ้าปนกับขยะรีไซเคิลจะทำให้ของอื่นเปื้อน",
+  veg:"เศษผักย่อยสลายได้ ทิ้งถังขยะเปียก นำไปทำปุ๋ยหมักหรือน้ำหมักชีวภาพได้",
+  coconut:"กะลามะพร้าวเป็นขยะอินทรีย์ ทิ้งถังขยะเปียก นำไปทำถ่านหรือวัสดุปลูกได้",
+  bottle:"ขวดน้ำพลาสติกรีไซเคิลได้ เทน้ำออก บีบให้แบน แล้วทิ้งถังรีไซเคิล",
+  can:"กระป๋องอะลูมิเนียมหลอมใช้ใหม่ได้ซ้ำหลายรอบ เทให้หมดแล้วทิ้งถังรีไซเคิล",
+  glass:"ขวดแก้วรีไซเคิลได้ ทิ้งถังรีไซเคิล ถ้าแตกบนหาดจะบาดเท้าคนและสัตว์",
+  box:"ลังกระดาษที่แห้งรีไซเคิลได้ พับให้แบนแล้วทิ้งถังรีไซเคิล",
+  container:"กล่องพลาสติกแข็งรีไซเคิลได้ ล้างคราบอาหารออกก่อนทิ้งถังรีไซเคิล",
+  battery:"ถ่านไฟฉายมีโลหะหนัก ถ้ารั่วลงดินและน้ำจะเป็นพิษ ต้องทิ้งถังขยะอันตราย",
+  oil:"กระป๋องน้ำมันเครื่องมีน้ำมันค้างอยู่ น้ำมันเพียงเล็กน้อยก็ทำให้น้ำเสียได้ ทิ้งถังขยะอันตราย",
+  spray:"กระป๋องสเปรย์มีแรงดันและสารเคมี หน้าตาคล้ายกระป๋องเครื่องดื่มแต่ต้องทิ้งถังขยะอันตราย",
+  bulb:"หลอดไฟบางชนิดมีสารปรอท ห้ามทุบ ต้องทิ้งถังขยะอันตราย",
+  bag:"ถุงพลาสติกที่เปื้อนอาหารรีไซเคิลไม่ได้ ทิ้งถังทั่วไป ถ้าหลุดลงทะเล เต่าอาจกินเพราะคิดว่าเป็นแมงกะพรุน",
+  foam:"กล่องโฟมเปื้อนอาหารและแตกเป็นเม็ดเล็กง่าย รีไซเคิลยาก ทิ้งถังทั่วไป",
+  cup:"แก้วพลาสติกที่เปื้อนเครื่องดื่มรีไซเคิลยาก ทิ้งถังทั่วไป หรือพกแก้วส่วนตัวแทน",
+  snack:"ซองขนมเป็นพลาสติกหลายชั้น แยกรีไซเคิลไม่ได้ ทิ้งถังทั่วไป",
+  cutlery:"ช้อนส้อมพลาสติกชิ้นเล็กและมักเปื้อนอาหาร รีไซเคิลยาก ทิ้งถังทั่วไป",
+  basket:"เศษอาหารจากตลาดเป็นขยะเปียก ถ้าแยกไว้ทำปุ๋ย ขยะที่ต้องฝังกลบจะลดลงมาก",
+  pile:"ขยะหลังงานเทศกาลส่วนใหญ่เป็นพลาสติกเปื้อน ทิ้งถังทั่วไป ก่อนลมและคลื่นจะพัดลงทะเล",
+  drum:"ถังน้ำมันรั่วเป็นขยะอันตราย น้ำมันกระจายบนผิวน้ำได้เป็นวงกว้าง ต้องแยกกำจัดเป็นพิเศษ"
+});
+// real-world pass: name the plastic type; anything that is recyclable only in theory goes to general waste
+(function(){
+  function set(k,o){ Object.assign(T[k],o); }
+  set("bottle",{n:"ขวดน้ำใส (PET)", why:"ขวดใส PET ขายได้จริง"});
+  set("container",{n:"แกลลอนนมขวดขุ่น (HDPE)", i:"jug", why:"ขวดขุ่น HDPE ขายได้จริง"});
+  set("bagclean",{n:"ถุงหูหิ้วสะอาด (HDPE)", b:3, why:"รีไซเคิลได้ในทฤษฎี แต่แทบไม่มีที่รับ"});
+  set("bag",{n:"ถุงหูหิ้วเปื้อน (HDPE)", why:"เปื้อนอาหาร ไม่มีที่รับ"});
+  set("cup",{n:"แก้วใสบาง (PP) + หลอด", why:"แก้วใสบางไม่มีคนรับซื้อ"});
+  set("foam",{n:"กล่องโฟม (PS)", why:"โฟมไม่มีคนรับซื้อ"});
+  set("buoy",{n:"ทุ่นโฟมเก่า (EPS)"});
+  set("cutlery",{n:"ช้อนส้อมพลาสติก (PS)", why:"ชิ้นเล็ก ไม่มีคนรับซื้อ"});
+  set("straw",{n:"หลอดพลาสติก (PP)", why:"ชิ้นเล็กและเบา ไม่มีคนรับซื้อ"});
+  set("snack",{n:"ซองขนม (พลาสติกหลายชั้น)", why:"หลายชั้นปนฟอยล์ รีไซเคิลไม่ได้"});
+  set("sachet",{n:"ซองกาแฟ (พลาสติก+ฟอยล์)"});
+  set("cling",{n:"ฟิล์มห่ออาหาร (PVC/PE)"});
+  set("brush",{n:"แปรงสีฟัน (PP+ไนลอน)"});
+})();
+Object.assign(HOW, {
+  bottle:"ขวดน้ำใสทำจาก PET (เบอร์ 1) เป็นพลาสติกที่ซาเล้งและร้านรับซื้อของเก่ารับจริง เทน้ำออก บีบให้แบน แล้วทิ้งถังรีไซเคิล",
+  container:"แกลลอนนมขวดขุ่นทำจาก HDPE (เบอร์ 2) เป็นพลาสติกอีกชนิดที่ขายได้จริง ล้างให้สะอาดแล้วทิ้งถังรีไซเคิล",
+  bagclean:"ถุงหูหิ้ว HDPE ที่สะอาดรีไซเคิลได้ในทางทฤษฎี แต่ถังรีไซเคิลทั่วไปและซาเล้งแทบไม่รับเพราะราคาต่ำมาก ในชีวิตจริงจึงทิ้งถังทั่วไป ยกเว้นใกล้บ้านมีจุดรับคืนพลาสติกยืด ทางที่ดีที่สุดคือใช้ซ้ำหรือใช้ถุงผ้า",
+  bag:"ถุงหูหิ้วที่เปื้อนอาหารไม่มีที่ไหนรับ ทิ้งถังทั่วไป ถ้าหลุดลงทะเล เต่าอาจกินเพราะคิดว่าเป็นแมงกะพรุน",
+  cup:"แก้วพลาสติกใสแบบบาง (PP) แม้ล้างแล้วก็แทบไม่มีคนรับซื้อ ยิ่งเปื้อนเครื่องดื่มยิ่งไม่รับ จึงทิ้งถังทั่วไป ทางที่ดีคือพกแก้วส่วนตัว",
+  foam:"กล่องโฟมทำจาก PS รีไซเคิลได้ในทางทฤษฎี แต่เบา เปื้อนอาหาร และไม่มีคนรับซื้อ จึงทิ้งถังทั่วไป",
+  buoy:"ทุ่นโฟม (EPS) แตกเป็นเม็ดเล็กง่ายและไม่มีคนรับซื้อ ทิ้งถังทั่วไป อย่าปล่อยให้ลอยในทะเล",
+  cutlery:"ช้อนส้อมพลาสติก (PS) ชิ้นเล็กและมักเปื้อนอาหาร ไม่มีคนรับซื้อ ทิ้งถังทั่วไป",
+  straw:"หลอดพลาสติกทำจาก PP ซึ่งรีไซเคิลได้ในทางทฤษฎี แต่ชิ้นเล็กและเบาจนไม่มีใครคัดแยก จึงทิ้งถังทั่วไป ทางที่ดีคือไม่รับหลอด",
+  snack:"ซองขนมเป็นพลาสติกหลายชั้นประกบกับฟอยล์ แยกวัสดุออกจากกันไม่ได้ โรงงานรีไซเคิลไม่รับ ทิ้งถังทั่วไป",
+  sachet:"ซองกาแฟสำเร็จรูปเป็นพลาสติกประกบฟอยล์ แยกชั้นไม่ได้ โรงงานรีไซเคิลไม่รับ ทิ้งถังทั่วไป",
+  cling:"ฟิล์มห่ออาหาร (PVC หรือ PE) บางและมักเปื้อนอาหาร ไม่มีคนรับซื้อ ทิ้งถังทั่วไป",
+  brush:"แปรงสีฟันมีด้าม PP ติดกับขนไนลอน แยกวัสดุไม่ได้ จึงทิ้งถังทั่วไป",
+  carton:"กล่องนมยูเอชทีมีโรงงานรับซื้อจริง แต่ต้องเทให้หมด ล้าง และพับให้แบนก่อน แล้วทิ้งถังรีไซเคิล"
+});
+var PLASTIC_NOTE = '<div class="pnote"><b>พลาสติกรีไซเคิลได้จริงแค่บางชนิด</b>'+
+  '<span><i class="ok">ขายได้จริง</i> ขวดน้ำใส PET (เบอร์ 1) และขวดขุ่น HDPE (เบอร์ 2)</span>'+
+  '<span><i class="no">ทฤษฎีได้ แต่แทบไม่มีที่รับ</i> ถุงหูหิ้ว ฟิล์ม แก้วใสบาง หลอด โฟม ในชีวิตจริงจึงทิ้งถังทั่วไป</span>'+
+  '<span><i class="no">รีไซเคิลไม่ได้</i> ซองขนมและซองกาแฟที่เป็นพลาสติกหลายชั้นปนฟอยล์</span>'+
+  '<span>ทางที่ดีที่สุดคือใช้ให้น้อยลงและใช้ซ้ำ</span></div>';
+var BIN_GUIDE = [
+  "เศษอาหาร เปลือกผลไม้ ใบไม้ ของที่ย่อยสลายได้ นำไปทำปุ๋ย",
+  "ขวดใส PET ขวดขุ่น HDPE กระป๋อง ขวดแก้ว กระดาษ ที่สะอาดและแห้ง ขายได้จริง",
+  "ถ่าน หลอดไฟ สเปรย์ ยา น้ำมัน ของที่มีสารเคมี ต้องแยกไปกำจัดเป็นพิเศษ",
+  "ของเปื้อนอาหาร วัสดุผสม และพลาสติกที่ไม่มีคนรับ เช่น ถุง แก้วบาง หลอด โฟม ซองขนม"
+];
+// true cases shown on the win screen (sources: Thai PBS 2018/2019; Lamb et al., Science 2018)
+var STORIES = [
+  {img:"dugong_s", h:"พะยูนน้อย \"มาเรียม\"", w:"เกาะลิบง จ.ตรัง · 17 ส.ค. 2562",
+   t:"ลูกพะยูนที่คนไทยช่วยกันดูแลตายลง ผลชันสูตรพบเศษพลาสติกชิ้นเล็ก ๆ ยาว 8–10 ซม. คาดว่าเป็นถุงหูหิ้วที่เปื่อยแล้ว อุดตันลำไส้จนติดเชื้อในกระแสเลือด", g:"ขยะที่เกี่ยวข้อง: ถุงพลาสติก"},
+  {img:"whale_s", h:"วาฬนำร่องครีบสั้น", w:"คลองนาทับ อ.จะนะ จ.สงขลา · 1 มิ.ย. 2561",
+   t:"วาฬเกยตื้นและตายแม้สัตวแพทย์จะพยายามช่วย ในกระเพาะพบถุงพลาสติก 85 ชิ้น ขยะรวมหนักประมาณ 8 กิโลกรัม", g:"ขยะที่เกี่ยวข้อง: ถุงพลาสติก 85 ชิ้น ประมาณ 8 กก."},
+  {img:"turtle_s", h:"เต่าทะเลเกยตื้น 19 ตัวใน 3 วัน", w:"ชายฝั่งทะเลไทย · ธ.ค. 2562",
+   t:"กรมทรัพยากรทางทะเลและชายฝั่งรับแจ้งเต่าเกยตื้น 19 ตัวภายใน 3 วัน หลายตัวถูกเศษอวนและเชือกพันจนเป็นแผล เต่าที่ตาย 2 ตัวพบขยะในกระเพาะ", g:"ขยะที่เกี่ยวข้อง: เศษอวน เชือก ขยะพลาสติก"},
+  {img:"coral_s", h:"ปะการังป่วยเพราะพลาสติก", w:"งานวิจัยในวารสาร Science · 2561",
+   t:"นักวิจัยสำรวจแนวปะการัง 159 แห่งในเอเชียแปซิฟิก รวมถึงไทย พบว่าปะการังที่มีพลาสติกเกาะ เสี่ยงเป็นโรคเพิ่มจาก 4% เป็น 89% และคาดว่ามีพลาสติกค้างอยู่บนแนวปะการังราว 11,100 ล้านชิ้น", g:"ขยะที่เกี่ยวข้อง: พลาสติกทุกชนิดที่จมลงไปเกาะปะการัง"}
+];
 var ZONES = {
-  market:{name:"ตลาดสด", pool:["veg","fish","shrimp","melon","bag","foam","snack","can","glass","container","battery"]},
-  beach:{name:"หาดท่องเที่ยว", pool:["coconut","melon","bottle","can","glass","spray","battery","cup","snack","cutlery","bag"]},
-  harbor:{name:"ท่าเรือ", pool:["fish","shrimp","box","container","bottle","oil","bulb","battery","bag","foam"]}
+  market:{name:"ตลาดสด", pool:["veg","fish","shrimp","melon","banana","bag","foam","snack","can","glass","container","news","battery"]},
+  beach:{name:"หาดท่องเที่ยว", pool:["coconut","melon","banana","bottle","can","glass","spray","battery","cup","snack","cutlery","bag"]},
+  harbor:{name:"ท่าเรือ", pool:["fish","shrimp","box","news","container","bottle","oil","bulb","battery","bag","foam"]}
 };
 var WAVE_ZONE = ["market","market","beach","beach","harbor","harbor"];
 // pacing: new items arrive on waves 3 and 5 at the SAME speed; speed rises a little only on waves 2, 4, 6
@@ -775,7 +920,7 @@ var S;
 function fresh(){
   return {on:false,paused:false,gp:0,wave:1,wt:0,sea:0,streak:0,sorted:0,items:[],sel:null,spawnClock:0,
           cardClock:0,firstCard:false,bigDone:false,bigAt:99,netDone:false,netAt:99,slots:[null,null],
-          shield:0,slow:0,last:null,mistakes:[],sickSeen:{},transition:0,seenKeys:{},level:"easy"};
+          shield:0,slow:0,last:null,mistakes:[],missLog:[],sickSeen:{},transition:0,seenKeys:{},level:"easy"};
 }
 S=fresh();
 
@@ -950,6 +1095,7 @@ function sortInto(b){
     if(bonusOn && S.streak%5===0) toast("ถูก "+S.streak+" ชิ้นติด! +2","good");
   } else {
     S.streak=0; flash(binEls[b],"bad"); sfx.bad();
+    S.missLog.push({k:it.key,type:"wrong",chose:b});
     toSea(it, it.kind==="big"?2:1, "ผิดถัง! "+it.t.n+" → "+BINS[it.t.b].name+(it.t.why?"\n"+it.t.why:""));
   }
   renderHud();
@@ -1009,6 +1155,7 @@ function landed(it){
   var el=it.el; setTimeout(function(){ fadeOut(el); },450);
   S.streak=0; sfx.splash();
   var n = (it.kind==="big"||it.kind==="net") ? 2 : 1;
+  if(it.kind!=="net") S.missLog.push({k:it.key,type:"floor"});
   toSea(it, n, "ตกพื้น! "+it.t.n+(it.t.b!=null?" → "+BINS[it.t.b].name:""));
 }
 
@@ -1118,14 +1265,43 @@ function end(win){
   S.mistakes.forEach(function(k){ cnt[k]=(cnt[k]||0)+1; if(!top||cnt[k]>cnt[top]) top=k; });
   var all0 = Object.assign({}, T, {basket:BIG.market, pile:BIG.beach, drum:BIG.harbor});
   var fact = top && (FACT[top] || (all0[top]&&all0[top].why)) ? (FACT[top] || (all0[top].n+": "+all0[top].why)) : "แนวปะการังเป็นบ้านและแหล่งอนุบาลของสัตว์ทะเลกว่า 25% ในมหาสมุทร";
-  $("endFact").innerHTML = "<b>รู้ไหม?</b> "+fact + (win && bonus ? "<br><b>โบนัสสัตว์แข็งแรง</b> +"+bonus+" Green Point" : "");
-  var seen={}, list=[];
-  S.mistakes.forEach(function(k){ if(!seen[k] && k!=="net"){ seen[k]=1; list.push(k); } });
-  var all = Object.assign({}, T, {basket:BIG.market, pile:BIG.beach, drum:BIG.harbor});
-  $("review").innerHTML = list.length ? "<h3>ชิ้นที่พลาด → ถังที่ถูก</h3><ul>"+list.slice(0,6).map(function(k){
-      var t=all[k], b=BINS[t.b];
-      return '<li>'+icon("i-"+t.i)+'<span>'+t.n+'</span><span class="chip" style="--c:'+b.c+';--on:'+b.on+'">'+b.name+'</span></li>';
-    }).join("")+"</ul>" : "";
+  var all = all0;
+  $("endFact").hidden = !(win && bonus);
+  $("endFact").innerHTML = win && bonus ? "<b>โบนัสสัตว์แข็งแรง</b> +"+bonus+" Green Point" : "";
+  $("endAnimals").hidden = !win;
+  // group mistakes per item: wrong-bin first, most frequent first
+  var agg={}, order=[];
+  S.missLog.forEach(function(m){
+    if(!all[m.k]) return;
+    var a=agg[m.k]; if(!a){ a=agg[m.k]={k:m.k,wrong:0,floor:0,chose:{}}; order.push(a); }
+    if(m.type==="wrong"){ a.wrong++; a.chose[m.chose]=1; } else a.floor++;
+  });
+  order.sort(function(x,y){ return (y.wrong-x.wrong) || (y.floor-x.floor); });
+  function chipFor(bi){ var bb=BINS[bi]; return '<span class="chip" style="--c:'+bb.c+';--on:'+bb.on+'">'+bb.name+'</span>'; }
+  if(win){
+    $("endStories").hidden=false;
+    $("endStories").innerHTML = '<h3>เรื่องจริงจากทะเล</h3><p class="st-lead">วาฬในเกมรอดแล้ว แต่ในทะเลจริง สัตว์หลายตัวไม่รอดเพราะขยะ</p>'+
+      STORIES.map(function(o){ return '<div class="story"><img src="'+IMG[o.img]+'" alt=""><div><b>'+o.h+'</b><small>'+o.w+'</small><span>'+o.t+'</span><em>'+o.g+'</em></div></div>'; }).join("")+
+      '<p class="st-src">ที่มา: Thai PBS (2561, 2562) · Lamb และคณะ, วารสาร Science (2561)</p><p class="st-end">ขยะทุกชิ้นที่คุณแยกถูก คือขยะที่ไม่ไปถึงพวกเขา</p>';
+    $("review").className="review";
+    $("review").innerHTML = order.length ? "<h3>ชิ้นที่พลาด → ถังที่ถูก</h3><ul>"+order.slice(0,6).map(function(a){
+        var t=all[a.k]; return '<li>'+icon("i-"+t.i)+'<span>'+t.n+'</span>'+chipFor(t.b)+'</li>';
+      }).join("")+"</ul>" : "";
+    $("review").innerHTML += PLASTIC_NOTE;
+  } else {
+    $("endStories").hidden=true; $("endStories").innerHTML="";
+    $("review").className="review answer";
+    var nWrong=order.filter(function(a){ return a.wrong>0; }).length;
+    $("review").innerHTML = "<h3>เฉลย: ทิ้งแบบไหนถึงถูก</h3>"+
+      (order.length ? '<p class="an-lead">'+(nWrong? "เรียงจากชิ้นที่ทิ้งผิดถังบ่อยที่สุด" : "ชิ้นที่ปล่อยตกพื้น")+'</p>' : "")+
+      order.map(function(a){
+        var t=all[a.k];
+        var youDid = a.wrong ? ("คุณใส่ถัง"+Object.keys(a.chose).map(function(c){ return BINS[c].name; }).join(" และ ")+(a.wrong>1?" "+a.wrong+" ครั้ง":"")+(a.floor?" และปล่อยตกพื้น":"")) : ("ปล่อยตกพื้น"+(a.floor>1?" "+a.floor+" ครั้ง":""));
+        var why = HOW[a.k] || FACT[a.k] || (t.why||"");
+        return '<div class="an'+(a.wrong?" wrong":"")+'"><div class="an-top">'+icon("i-"+t.i)+'<b>'+t.n+'</b>'+chipFor(t.b)+'</div><small>'+youDid+' · ที่ถูกคือถัง'+BINS[t.b].name+'</small><span>'+why+'</span></div>';
+      }).join("")+
+      PLASTIC_NOTE+'<h3 class="guide-h">จำง่าย ๆ 4 ถัง</h3><div class="guide">'+BINS.map(function(bb,i){ return '<div>'+chipFor(i)+'<span>'+BIN_GUIDE[i]+'</span></div>'; }).join("")+'</div>';
+  }
   $("shareText").value = win ? ("ฉันช่วยวาฬบรูด้าให้รอดใน Ocean Guardian Mini ระดับ"+LV.n+" ได้ "+S.gp+" Green Point ลองเล่นดูสิ!")
                              : ("ฉันพยายามช่วยวาฬบรูด้าใน Ocean Guardian Mini ระดับ"+LV.n+" ได้ "+S.gp+" Green Point มาช่วยกันอีกแรงนะ!");
   $("copyBtn").textContent="คัดลอก";
